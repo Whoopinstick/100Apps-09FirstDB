@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0ABD31EC24E7725700C0505B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD31EB24E7725700C0505B /* AppDelegate.swift */; };
 		0ABD31EE24E7725700C0505B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD31ED24E7725700C0505B /* SceneDelegate.swift */; };
-		0ABD31F124E7725700C0505B /* _9___FirstDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD31EF24E7725700C0505B /* _9___FirstDB.xcdatamodeld */; };
+		0ABD31F124E7725700C0505B /* FirstDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD31EF24E7725700C0505B /* FirstDB.xcdatamodeld */; };
 		0ABD31F324E7725700C0505B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD31F224E7725700C0505B /* ContentView.swift */; };
 		0ABD31F524E7725800C0505B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD31F424E7725800C0505B /* Assets.xcassets */; };
 		0ABD31F824E7725800C0505B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD31F724E7725800C0505B /* Preview Assets.xcassets */; };
@@ -58,13 +58,11 @@
 		0ABD31EA24E7725700C0505B /* 09 - FirstDB */ = {
 			isa = PBXGroup;
 			children = (
-				0ABD31EB24E7725700C0505B /* AppDelegate.swift */,
-				0ABD31ED24E7725700C0505B /* SceneDelegate.swift */,
-				0ABD31F224E7725700C0505B /* ContentView.swift */,
 				0ABD31F424E7725800C0505B /* Assets.xcassets */,
-				0ABD31F924E7725800C0505B /* LaunchScreen.storyboard */,
 				0ABD31FC24E7725800C0505B /* Info.plist */,
-				0ABD31EF24E7725700C0505B /* _9___FirstDB.xcdatamodeld */,
+				0ABD320224E772AE00C0505B /* Delegate */,
+				0ABD320324E772CE00C0505B /* Model */,
+				0ABD320424E772D400C0505B /* View */,
 				0ABD31F624E7725800C0505B /* Preview Content */,
 			);
 			path = "09 - FirstDB";
@@ -76,6 +74,32 @@
 				0ABD31F724E7725800C0505B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0ABD320224E772AE00C0505B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				0ABD31EB24E7725700C0505B /* AppDelegate.swift */,
+				0ABD31ED24E7725700C0505B /* SceneDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		0ABD320324E772CE00C0505B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0ABD31EF24E7725700C0505B /* FirstDB.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0ABD320424E772D400C0505B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0ABD31F224E7725700C0505B /* ContentView.swift */,
+				0ABD31F924E7725800C0505B /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ABD31F124E7725700C0505B /* _9___FirstDB.xcdatamodeld in Sources */,
+				0ABD31F124E7725700C0505B /* FirstDB.xcdatamodeld in Sources */,
 				0ABD31EC24E7725700C0505B /* AppDelegate.swift in Sources */,
 				0ABD31F324E7725700C0505B /* ContentView.swift in Sources */,
 				0ABD31EE24E7725700C0505B /* SceneDelegate.swift in Sources */,
@@ -348,13 +372,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0ABD31EF24E7725700C0505B /* _9___FirstDB.xcdatamodeld */ = {
+		0ABD31EF24E7725700C0505B /* FirstDB.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				0ABD31F024E7725700C0505B /* _9___FirstDB.xcdatamodel */,
 			);
 			currentVersion = 0ABD31F024E7725700C0505B /* _9___FirstDB.xcdatamodel */;
-			path = "_9___FirstDB.xcdatamodeld";
+			path = FirstDB.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
