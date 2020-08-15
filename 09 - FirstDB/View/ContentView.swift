@@ -16,12 +16,14 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(groceries, id: \.id) {grocery in
-                    VStack(alignment: .leading) {
-                        Text(grocery.name ?? "unknown")
-                            .font(.headline)
-                        Text("\(grocery.quantity)")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                    NavigationLink(destination: EditItemView(grocery: grocery)) {
+                        VStack(alignment: .leading) {
+                            Text(grocery.name ?? "unknown")
+                                .font(.headline)
+                            Text("\(grocery.quantity)")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 .onDelete(perform: deleteRow)
