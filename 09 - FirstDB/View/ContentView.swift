@@ -9,8 +9,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @FetchRequest(entity: Groceries.entity(), sortDescriptors: []) var groceries: FetchedResults<Groceries>
+    @Environment(\.managedObjectContext) var moc
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            List {
+                ForEach(groceries, id: \.id) {grocery in
+                    Text(grocery.name ?? "unknown")
+                }
+            }
+                
+                
+                .navigationBarTitle("Grocery List")
+                .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                    
+                }) {
+                    Image(systemName: "plus")
+                })
+        }
     }
 }
 
