@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @FetchRequest(entity: Groceries.entity(), sortDescriptors: []) var groceries: FetchedResults<Groceries>
+    @FetchRequest(entity: Groceries.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Groceries.name, ascending: true)]) var groceries: FetchedResults<Groceries>
     @Environment(\.managedObjectContext) var moc
+    @State private var isShowingSheet = false
     var body: some View {
         NavigationView {
             List {
@@ -23,21 +24,22 @@ struct ContentView: View {
                             .foregroundColor(.secondary)
                     }
                 }
-            .onDelete(perform: deleteRow)
+                .onDelete(perform: deleteRow)
             }
                 
                 
             .navigationBarTitle("Grocery List")
             .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-                let groceryItem = Groceries(context: self.moc)
-                groceryItem.id = UUID()
-                groceryItem.name = "Chicken"
-                groceryItem.quantity = Int16.random(in: 1...5)
-                try? self.moc.save()
+                self.isShowingSheet.toggle()
             }) {
                 Image(systemName: "plus")
             })
         }
+            
+        .sheet(isPresented: $isShowingSheet) {
+            NewItemView().environment(\.managedObjectContext, self.moc)
+        }
+        
     }
     func deleteRow(at offsets: IndexSet) {
         for offset in offsets {
